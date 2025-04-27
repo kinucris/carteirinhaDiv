@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Carteira - Dashboard</title>
+  <link href="css/theme.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dark">
+  <header class="header">
+    <h1>Minha Carteira - Atualizado em <span id="data-atual"></span></h1>
+    <button onclick="abrirFormulario()" class="botao-adicionar">Adicionar Ativo</button>
+  </header>
+
+  <main class="dashboard">
+    <section id="resumo" class="cards"></section>
+    <section id="tabela-container"></section>
+    <section class="graficos">
+      <canvas id="grafico-pizza"></canvas>
+      <canvas id="grafico-linha"></canvas>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="modal-titulo">Adicionar/Editar Ativo</h2>
+      <input id="novo-ticker" type="text" placeholder="Ticker" class="input-modal">
+      <input id="novo-preco" type="number" placeholder="Preço Médio" class="input-modal">
+      <input id="novo-quantidade" type="number" placeholder="Quantidade" class="input-modal">
+      <div class="modal-actions">
+        <button onclick="salvarNovoAtivo()" class="botao-salvar">Salvar</button>
+        <button onclick="fecharFormulario()" class="botao-cancelar">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/funcoes.js"></script>
+</body>
+</html>
